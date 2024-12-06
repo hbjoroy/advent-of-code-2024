@@ -15,8 +15,13 @@ let ``My test`` (file, (medianSum:int)) = task {
 
     let m = Map<int,int[]>
 
-
+    let tuples =
+        defs
+        |> Array.map (fun s -> 
+            let ss = s.Split('|')
+            (s[0],s[1]))
     Assert.Equal(21, defs.Length)
+    Assert.Equal(21, tuples.Length)
     Assert.Equal(6, jobs.Length)
 }
 
